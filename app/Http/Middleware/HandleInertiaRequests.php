@@ -34,6 +34,16 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'navigation' => [
+                [
+                    'label' => 'Informacie',
+                    'routeName' => 'home'
+                ],
+                [
+                    'label' => 'Login',
+                    'routeName' => 'login'
+                ]
+            ]
         ];
     }
 }
