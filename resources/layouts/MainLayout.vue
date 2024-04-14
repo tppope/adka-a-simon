@@ -6,7 +6,7 @@ import TheHeader from "@/Components/Heading/TheHeader.vue";
 
 <template>
     <TheHeader />
-    <main>
+    <main class="max-w-[85rem] mx-auto flex justify-start items-center flex-col">
         <slot/>
     </main>
 

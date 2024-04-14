@@ -11,13 +11,12 @@ import NavLink from "@/Components/NavLink.vue";
         <h1
             class="text-center font-heading text-5xl font-bold sm:text-6xl lg:text-7xl"
         >
-            Adka a Simon
+            Aďka a Šimon
         </h1>
         <Menubar :model="$page.props.navigation">
             <template #item="{ item, props }">
                 <NavLink v-bind="props.action" :href="route(item.routeName)" :active="route().current(item.routeName)">
                     {{ item.label }}
-
                 </NavLink>
             </template>
         </Menubar>
