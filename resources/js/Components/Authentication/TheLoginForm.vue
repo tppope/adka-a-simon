@@ -63,13 +63,12 @@ function submit() {
             <Link
                 v-if="canResetPassword"
                 :href="route('password.request')"
-                class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-                Forgot your password?
+                <Button pt:root:class="focus:ring-0" :pt-options="{mergeProps: true}" link label="Zabudnuté heslo?"/>
             </Link>
 
 
-            <Button type="button" label="Search" icon="pi pi-search" :loading="form.processing" />
+            <Button label="Prihlásiť sa" :loading="form.processing" />
 
         </div>
 

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\GuestController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,7 +15,7 @@ Route::get('/', function () {
 
 Route::name('guest.')->prefix('potvrdenie-ucasti')->controller(GuestController::class)->group(function () {
 
-   Route::get('/', 'create');
+   Route::get('/', 'create')->name('create');
    Route::post('/', 'store')->name('store');
 });
 

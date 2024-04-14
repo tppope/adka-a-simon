@@ -34,16 +34,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
-            'navigation' => [
-                [
-                    'label' => 'Informacie',
-                    'routeName' => 'home'
-                ],
-                [
-                    'label' => 'Login',
-                    'routeName' => 'login'
-                ]
-            ]
+            'navigation' => config('app.navigation', ['label' => 'Domov', 'routeName' => 'home'])
         ];
     }
 }
