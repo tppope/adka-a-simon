@@ -7,6 +7,7 @@ export type User = {
     updated_at?: any;
 };
 export type Guest = {
+    id: number;
     name: any;
     surname: any;
     email?: any;
@@ -20,4 +21,5 @@ export type Guest = {
     created_at?: any;
     updated_at?: any;
     deleted_at?: any;
+    is_participated: any;
 };

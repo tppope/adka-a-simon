@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('surname');
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->boolean('is_lactose_free');
-            $table->boolean('is_gluten_free');
-            $table->boolean('is_vegetarian');
-            $table->boolean('is_vegan');
-            $table->boolean('is_child');
+            $table->boolean('is_lactose_free')->default(false);
+            $table->boolean('is_gluten_free')->default(false);;
+            $table->boolean('is_vegetarian')->default(false);;
+            $table->boolean('is_vegan')->default(false);;
+            $table->boolean('is_child')->default(false);;
             $table->tinyText('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();
