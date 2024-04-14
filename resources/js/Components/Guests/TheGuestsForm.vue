@@ -50,11 +50,11 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
 <template>
     <div class="max-w-3xl">
         <header>
-            <h2 class="font-bold text-3xl text-center my-10">Potvrdenie účasti</h2>
+            <h2 class="font-bold text-3xl text-surface-500 text-center my-10">Potvrdenie účasti</h2>
         </header>
         <form @submit.prevent="submit"
               class="flex flex-col items-center">
-            <small class="self-end">* Povinné pole</small>
+            <small class="self-end mr-8">* Povinné pole</small>
             <div class="border-2 rounded-md px-8 py-4 m-2"
                  v-auto-animate>
                 <GuestInputFields v-for="(guest, order) in form.guests" :guest :order/>
@@ -76,8 +76,8 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
                             @click="removeGuest()"/>
                 </div>
             </div>
-                <Button type="button"
-                        label="Odoslať odpoveď"
+                <Button label="Odoslať odpoveď"
+                        type="submit"
                         class="w-96 m-6"/>
         </form>
     </div>

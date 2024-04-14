@@ -17,7 +17,7 @@ defineProps<{
 <template>
     <div v-if="order != 0" class="border-t-2 m-5"></div>
     <header>
-        <h3 class="text-lg mb-8 text-center font-bold text-xl">Hosť {{order + 1}}</h3>
+        <h3 class="text-lg mb-8 text-center font-bold text-xl text-primary-500">Hosť {{order + 1}}</h3>
     </header>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <FloatLabel>

@@ -1,23 +1,22 @@
 <script setup lang="ts">
 import Menubar from "primevue/menubar";
-
-import NavLink from "@/Components/NavLink.vue";
+import {Link} from "@inertiajs/vue3";
 
 </script>
 
 <template>
 
-    <header class="sticky inset-x-0 top-0 z-[80] w-full px-2">
+    <header id="main-header" class="sticky inset-x-0 top-0 z-[80] w-full px-2">
         <h1
-            class="text-center font-heading text-5xl font-bold sm:text-6xl lg:text-7xl"
+            class="text-center font-heading text-5xl p-5 font-bold text-primary-500 sm:text-6xl lg:text-7xl"
         >
             Aďka a Šimon
         </h1>
-        <Menubar :model="$page.props.navigation">
+        <Menubar :model="$page.props.navigation" class="bg-transparent w-80 m-auto border-none">
             <template #item="{ item, props }">
-                <NavLink v-bind="props.action" :href="route(item.routeName)" :active="route().current(item.routeName)">
+                <Link v-bind="props.action" :href="route(item.routeName)">
                     {{ item.label }}
-                </NavLink>
+                </Link>
             </template>
         </Menubar>
 
