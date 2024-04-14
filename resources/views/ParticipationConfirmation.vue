@@ -5,6 +5,7 @@ import TheGuestsForm from "@/Components/Guests/TheGuestsForm.vue";
 
 <template>
     <TheGuestsForm />
+
 </template>
 
 <style scoped>

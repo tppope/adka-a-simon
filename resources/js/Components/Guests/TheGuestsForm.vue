@@ -17,6 +17,7 @@ const defaultGuest: Guest = {
     'is_vegetarian': false,
     'is_vegan': false,
     'is_child': false,
+    'is_participated': true,
     'notes': ''
 }
 
@@ -29,7 +30,11 @@ const form = useForm({
 });
 
 function submit() {
-    form.post(route('guest.store'));
+    form.post(route('guest.store'), {
+        onSuccess: () => {
+            console.log('Success!!!!!')
+        }
+    });
 }
 
 function addGuest() {
@@ -48,14 +53,14 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
 </script>
 
 <template>
-    <div class="max-w-3xl">
+    <div class="sm:w-[48rem] w-full">
         <header>
             <h2 class="font-bold text-3xl text-surface-500 text-center my-10">Potvrdenie účasti</h2>
         </header>
         <form @submit.prevent="submit"
-              class="flex flex-col items-center">
+              class="flex flex-col items-center w-full">
             <small class="self-end mr-8">* Povinné pole</small>
-            <div class="border-2 rounded-md px-8 py-4 m-2"
+            <div class="border-2 rounded-md px-8 py-4 m-2 w-full"
                  v-auto-animate>
                 <GuestInputFields v-for="(guest, order) in form.guests" :guest :order/>
                 <div class="sm:flex-row flex flex-col justify-center gap-5 mt-5" v-auto-animate>
@@ -76,9 +81,9 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
                             @click="removeGuest()"/>
                 </div>
             </div>
-                <Button label="Odoslať odpoveď"
-                        type="submit"
-                        class="w-96 m-6"/>
+            <Button label="Odoslať odpoveď"
+                    type="submit"
+                    class="sm:w-4/5 w-full m-6"/>
         </form>
     </div>
 </template>
