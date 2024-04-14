@@ -14,13 +14,13 @@ import {autoAnimatePlugin} from "@formkit/auto-animate/vue";
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => appName + (title && `| ${title}`),
     resolve: async (name) => {
         const page = await resolvePageComponent(
             `../views/${name}.vue`,
             import.meta.glob<DefineComponent>('../views/**/*.vue')
         );
-        page.default.layout ??= name.startsWith('Admin/') ? AdminLayout : MainLayout
+        page.default.layout ??= name.startsWith('Admin/') || name.startsWith('Authentication/') ? AdminLayout : MainLayout
         return page;
     },
     setup({ el, App, props, plugin }) {

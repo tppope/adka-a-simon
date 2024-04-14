@@ -49,9 +49,6 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
 
 <template>
     <div class="max-w-3xl">
-        <header>
-            <h2 class="font-bold text-3xl text-center my-10">Potvrdenie účasti</h2>
-        </header>
         <form @submit.prevent="submit"
               class="flex flex-col items-center">
             <small class="self-end">* Povinné pole</small>

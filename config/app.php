@@ -149,11 +149,11 @@ return [
 
     'navigation' => [
         [
-            'label' => 'Informacie',
+            'label' => 'Informácie',
             'routeName' => 'home'
         ],
         [
-            'label' => 'Login',
+            'label' => 'Potvrdenie účasti',
             'routeName' => 'guest.create'
         ]
     ]

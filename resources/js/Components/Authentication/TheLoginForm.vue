@@ -27,8 +27,7 @@ function submit() {
 
 <template>
     <form @submit.prevent="submit">
-
-        <div>
+        <div v-auto-animate>
             <FloatLabel>
                 <InputText
                     id="email"
@@ -36,30 +35,32 @@ function submit() {
                     v-model="form.email"
                     required
                     autofocus
+                    class="w-full"
                     autocomplete="username"
                 />
                 <label for="email">Email</label>
             </FloatLabel>
             <InputError class="mt-2" :message="form.errors.email"/>
         </div>
-        <div class="mt-4">
+        <div class="mt-7" v-auto-animate>
             <FloatLabel>
                 <InputText
                     id="password"
                     type="password"
                     v-model="form.password"
                     required
+                    class="w-full"
                     autocomplete="current-password"
                 />
                 <label for="password">Password</label>
             </FloatLabel>
             <InputError class="mt-2" :message="form.errors.password"/>
         </div>
-        <div class="block mt-4">
+        <div class="mt-4">
             <Checkbox v-model="form.remember" inputId="remember" :binary="true" />
-            <label for="remember" class="ml-2">Remember me</label>
+            <label for="remember" class="ml-2">Zapamätať prihlásenie</label>
         </div>
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-end mt-6">
             <Link
                 v-if="canResetPassword"
                 :href="route('password.request')"
@@ -68,7 +69,7 @@ function submit() {
             </Link>
 
 
-            <Button label="Prihlásiť sa" :loading="form.processing" />
+            <Button type="submit" label="Prihlásiť sa" />
 
         </div>
 

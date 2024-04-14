@@ -2,6 +2,7 @@
 
 import TheLoginForm from "@/Components/Authentication/TheLoginForm.vue";
 import {Head} from "@inertiajs/vue3";
+import SecondaryHeader from "@/Components/Heading/SecondaryHeader.vue";
 
 defineProps<{
     canResetPassword?: boolean;
@@ -11,12 +12,14 @@ defineProps<{
 
 <template>
 
-    <Head title="Log in" />
-
-    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-        {{ status }}
+    <Head title="Prihlásenie" />
+    <SecondaryHeader>Prihlásenie</SecondaryHeader>
+    <div>
+        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+            {{ status }}
+        </div>
+        <TheLoginForm :canResetPassword />
     </div>
-    <TheLoginForm :canResetPassword />
 </template>
 
 <style scoped>
