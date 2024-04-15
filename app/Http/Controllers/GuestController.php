@@ -41,7 +41,17 @@ class GuestController extends Controller
      */
     public function show(Guest $guest)
     {
-        //
+        $allGuests = Guest::all();
+
+        return Inertia::render('Admin/Dashboard', [
+            'guestsCount' => $allGuests->where('is_participated', true)->count(),
+            'lactoseFreeCount' => $allGuests->where('is_lactose_free', true)->count(),
+            'glutenFreeCount' => $allGuests->where('is_gluten_free', true)->count(),
+            'vegetarianCount' => $allGuests->where('is_vegetarian', true)->count(),
+            'veganCount' => $allGuests->where('is_vegan', true)->count(),
+            'childCount' => $allGuests->where('is_child', true)->count(),
+            'guests' => $allGuests
+        ]);
     }
 
     /**

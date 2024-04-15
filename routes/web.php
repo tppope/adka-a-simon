@@ -19,8 +19,6 @@ Route::name('guest.')->prefix('potvrdenie-ucasti')->controller(GuestController::
    Route::post('/', 'store')->name('store');
 });
 
-Route::get('/admin', function () {
-    return Inertia::render('Admin/Dashboard');
-})->middleware(['auth', 'verified'])->name('admin');
+Route::get('/admin', [GuestController::class, 'show'])->middleware(['auth', 'verified'])->name('admin');
 
 require __DIR__.'/auth.php';

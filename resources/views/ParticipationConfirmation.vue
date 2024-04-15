@@ -2,10 +2,12 @@
 
 import TheGuestsForm from "@/Components/Guests/TheGuestsForm.vue";
 import {Head} from "@inertiajs/vue3";
+import SecondaryHeader from "@/Components/Heading/SecondaryHeader.vue";
 </script>
 
 <template>
-    <Head title="Prihlásenie" />
+    <Head title="Potvrdenie účasti" />
+    <SecondaryHeader title="Potvrdenie účasti"/>
     <TheGuestsForm />
 
 </template>
