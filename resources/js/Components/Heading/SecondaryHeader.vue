@@ -7,7 +7,7 @@ defineProps<{
 <template>
     <header>
         <h2 class="font-bold text-3xl text-surface-500 text-center my-10">
-            <slot name="label">{{ title }}</slot>
+            <slot name="title">{{ title }}</slot>
         </h2>
         <slot/>
     </header>

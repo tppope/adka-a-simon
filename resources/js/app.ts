@@ -14,7 +14,7 @@ import {autoAnimatePlugin} from "@formkit/auto-animate/vue";
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
-    title: (title) => appName + (title && `| ${title}`),
+    title: (title) => appName + (title && ` | ${title}`),
     resolve: async (name) => {
         const page = await resolvePageComponent(
             `../views/${name}.vue`,
