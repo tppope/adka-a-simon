@@ -27,7 +27,7 @@ class GuestFactory extends Factory
             'is_vegetarian' => fake()->boolean(),
             'is_vegan' => fake()->boolean(),
             'is_participated' => fake()->boolean(),
-            'notes' => fake()->realText(),
+            'notes' => fake()->realTextBetween(5, 10),
         ];
     }
 }

@@ -5,7 +5,11 @@ import GuestInputFields from "@/Components/Guests/GuestInputFields.vue";
 import {Guest} from "@/types/model";
 import Button from 'primevue/button';
 import {computed} from "vue";
+import Divider from "primevue/divider";
 
+const emit = defineEmits<{
+    successfullySubmitted: []
+}>()
 
 const defaultGuest: Guest = {
     'id': 0,
@@ -33,8 +37,10 @@ const form = useForm({
 function submit() {
     form.post(route('guest.store'), {
         onSuccess: () => {
+            form.reset()
+            emit('successfullySubmitted')
             console.log('Success!!!!!')
-        }
+        },
     });
 }
 
@@ -56,12 +62,15 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
 
 <template>
     <form @submit.prevent="submit"
-          class="flex flex-col items-center">
+          class="flex flex-col md:items-center items-stretch">
         <small class="self-end mr-8">* Povinné pole</small>
-        <div class="border-2 rounded-md px-8 m-2"
+        <div class="border-2 border-surface-200 rounded-md p-5"
              v-auto-animate>
-            <GuestInputFields :class="{'border-t-2 mt-5': guest.id}" v-for="guest in form.guests" :guest :key="guest.id"/>
-            <div class="sm:flex-row flex flex-col justify-center gap-5 mt-5" v-auto-animate>
+            <template v-for="guest in form.guests" :key="guest.id">
+                <Divider v-if="guest.id" />
+                <GuestInputFields :guest/>
+            </template>
+            <div class="px-8 sm:px-0 sm:flex-row flex flex-col justify-center gap-2 sm:gap-5 mt-5" v-auto-animate>
                 <Button type="button"
                         label="Pridať ďalšieho hosťa"
                         outlined
@@ -81,6 +90,7 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
         </div>
         <Button label="Odoslať odpoveď"
                 type="submit"
+                :loading="form.processing"
                 class="sm:w-4/5 w-full m-6"/>
     </form>
 </template>

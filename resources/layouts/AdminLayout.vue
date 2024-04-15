@@ -20,7 +20,7 @@ import PrimaryHeader from "@/Components/Heading/PrimaryHeader.vue";
             <Button pt:root:class="focus:ring-0" :pt-options="{mergeProps: true}" link label="Odhlásiť sa"/>
         </Link>
     </PrimaryHeader>
-    <main class="sm:max-w-[85rem] max-w-full px-3 mx-auto flex justify-start items-center flex-col">
+    <main class="sm:max-w-[85rem] max-w-full px-3 mx-auto flex justify-start items-stretch md:items-center flex-col pb-10">
         <slot />
     </main>
 

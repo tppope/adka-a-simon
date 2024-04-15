@@ -22,9 +22,7 @@ class GuestController extends Controller
      */
     public function create()
     {
-        return Inertia::render('ParticipationConfirmation', [
-
-        ]);
+        return Inertia::render('ParticipationConfirmation');
     }
 
     /**
@@ -44,12 +42,14 @@ class GuestController extends Controller
         $allGuests = Guest::all();
 
         return Inertia::render('Admin/Dashboard', [
-            'guestsCount' => $allGuests->where('is_participated', true)->count(),
-            'lactoseFreeCount' => $allGuests->where('is_lactose_free', true)->count(),
-            'glutenFreeCount' => $allGuests->where('is_gluten_free', true)->count(),
-            'vegetarianCount' => $allGuests->where('is_vegetarian', true)->count(),
-            'veganCount' => $allGuests->where('is_vegan', true)->count(),
-            'childCount' => $allGuests->where('is_child', true)->count(),
+            'guestInfo' => [
+                'Potvrdili účasť' => $allGuests->where('is_participated', true)->count(),
+                'Bezlaktózových' => $allGuests->where('is_lactose_free', true)->count(),
+                'Bezlepkových' => $allGuests->where('is_gluten_free', true)->count(),
+                'Vegetariánov' => $allGuests->where('is_vegetarian', true)->count(),
+                'Vegánov' => $allGuests->where('is_vegan', true)->count(),
+                'Detských porcií' => $allGuests->where('is_child', true)->count(),
+            ],
             'guests' => $allGuests
         ]);
     }

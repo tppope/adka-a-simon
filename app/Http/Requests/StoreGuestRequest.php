@@ -17,7 +17,7 @@ class StoreGuestRequest extends FormRequest
             "guests.*.name" => 'required|string|max:255',
             "guests.*.surname" => 'required|string|max:255',
             "guests.*.email" => 'nullable|email|string|max:255',
-            "guests.*.phone" => 'nullable|phone',
+            "guests.*.phone" => 'nullable|string|max:255',
             "guests.*.is_lactose_free" => 'boolean',
             "guests.*.is_gluten_free" => 'boolean',
             "guests.*.is_vegetarian" => 'boolean',
