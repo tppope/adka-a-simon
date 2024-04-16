@@ -60,7 +60,7 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
 </script>
 
 <template>
-    <article>
+    <article class="pb-3">
         <form @submit.prevent="submit"
               class="flex flex-col md:items-center items-stretch">
             <small class="self-end mr-8">* Povinné pole</small>
@@ -91,7 +91,7 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
             <Button label="Odoslať odpoveď"
                     type="submit"
                     :loading="form.processing"
-                    class="sm:w-4/5 w-full m-6"/>
+                    class="sm:w-4/5 w-full mt-6"/>
         </form>
     </article>
 </template>
