@@ -5,6 +5,7 @@ import {Head} from "@inertiajs/vue3";
 import SecondaryHeader from "@/Components/Heading/SecondaryHeader.vue";
 import {ref} from "vue";
 import Button from "primevue/button";
+import TheSucessfullSubmitCover from "@/Components/Guests/TheSucessfullSubmitCover.vue";
 
 const isSubmitted = ref(false);
 
@@ -12,17 +13,18 @@ const isSubmitted = ref(false);
 
 <template>
     <Head title="Potvrdenie účasti" />
-    <SecondaryHeader title="Potvrdenie účasti"/>
-    <TheGuestsForm v-if="!isSubmitted" @successfully-submitted="() => isSubmitted = true" />
-    <div v-else>
-        Dakujeme
-        <Button type="button"
-                label="Pridať ďalšieho hosťa"
-                outlined
-                icon="pi pi-user-plus"
-                size="small"
-                @click="() => isSubmitted = false"/>
-    </div>
+    <section v-auto-animate>
+        <SecondaryHeader title="Potvrdenie účasti"/>
+        <TheGuestsForm v-if="!isSubmitted" @successfully-submitted="() => isSubmitted = true" />
+        <TheSucessfullSubmitCover v-else>
+            <Button type="button"
+                    label="Pridať ďalšieho hosťa"
+                    outlined
+                    icon="pi pi-user-plus"
+                    size="small"
+                    @click="() => isSubmitted = false"/>
+        </TheSucessfullSubmitCover>
+    </section>
 </template>
 
 <style scoped>

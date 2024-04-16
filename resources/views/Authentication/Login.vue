@@ -11,15 +11,16 @@ defineProps<{
 </script>
 
 <template>
-
     <Head title="Prihlásenie" />
-    <SecondaryHeader title="Prihlásenie"/>
-    <div>
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
+    <section>
+        <SecondaryHeader title="Prihlásenie"/>
+        <div>
+            <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                {{ status }}
+            </div>
+            <TheLoginForm :canResetPassword />
         </div>
-        <TheLoginForm :canResetPassword />
-    </div>
+    </section>
 </template>
 
 <style scoped>

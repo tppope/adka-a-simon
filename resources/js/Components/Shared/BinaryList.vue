@@ -8,12 +8,12 @@
 </script>
 
 <template>
-    <div class="border-2 border-surface-200 rounded-md">
+    <article class="border-2 border-surface-200 rounded-md">
         <div v-for="(value, label) in list" :class="[{'even:bg-surface-100': stripped}, 'grid grid-cols-2 auto-cols-auto border-surface-0']">
             <BinaryListCell class="font-bold">{{ label }}</BinaryListCell>
             <BinaryListCell class="text-center">{{ value }}</BinaryListCell>
         </div>
-    </div>
+    </article>
 
 </template>
 

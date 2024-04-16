@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import SecondaryHeading from "@/Components/Heading/Headings/SecondaryHeading.vue";
+
 defineProps<{
-    title: string
+    title?: string
 }>()
 </script>
 
 <template>
     <header>
-        <h2 class="font-bold text-3xl text-surface-500 text-center my-10">
+        <SecondaryHeading>
             <slot name="title">{{ title }}</slot>
-        </h2>
+        </SecondaryHeading>
         <slot/>
     </header>
 </template>

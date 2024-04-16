@@ -19,11 +19,13 @@
         "tailwindcss": "^3.2.1",
         "typescript": "^5.0.2",
         "vite": "^5.0",
-        "vue": "^3.4.0",
+        "vue": "^3.4.22",
         "vue-tsc": "^1.8.27"
     },
     "dependencies": {
+        "@chenfengyuan/vue-countdown": "^2.1.2",
         "@formkit/auto-animate": "^0.8.2",
+        "@lottiefiles/lottie-player": "^2.0.4",
         "primeicons": "^7.0.0",
         "primevue": "^3.51.0"
     }

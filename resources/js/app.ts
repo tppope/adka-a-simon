@@ -10,6 +10,7 @@ import Lara from "@/presets/lara";
 import AdminLayout from "../layouts/AdminLayout.vue";
 import MainLayout from "../layouts/MainLayout.vue";
 import {autoAnimatePlugin} from "@formkit/auto-animate/vue";
+import "@lottiefiles/lottie-player";
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
