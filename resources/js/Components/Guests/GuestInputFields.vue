@@ -18,9 +18,9 @@ defineProps<{
     <div>
         <h3 class="text-lg mb-8 text-center font-bold text-primary-500">Hosť {{ guest.id + 1 }}</h3>
         <div
-            class="grid grid-cols-2 gap-6 md:w-[45rem] w-full text-surface-500 content-start"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-[45rem] w-full text-surface-500 content-start"
             v-auto-animate>
-            <FloatLabel class="max-md:col-span-2">
+            <FloatLabel>
                 <InputText
                     :id="'name-' + guest.id"
                     type="text"
@@ -32,7 +32,7 @@ defineProps<{
                 />
                 <label :for="'name-' + guest.id">Meno*</label>
             </FloatLabel>
-            <FloatLabel class="max-md:col-span-2">
+            <FloatLabel>
                 <InputText
                     :id="'surname-' + guest.id"
                     type="text"
@@ -43,7 +43,7 @@ defineProps<{
                 />
                 <label :for="'surname-' + guest.id">Priezvisko*</label>
             </FloatLabel>
-            <FloatLabel class="max-md:col-span-2">
+            <FloatLabel>
                 <InputText
                     :id="'email-' + guest.id"
                     type="text"
@@ -53,7 +53,7 @@ defineProps<{
                 />
                 <label :for="'email-' + guest.id">E-mail</label>
             </FloatLabel>
-            <FloatLabel class="max-md:col-span-2">
+            <FloatLabel>
                 <InputText
                     :id="'phone-' + guest.id"
                     type="text"
@@ -63,7 +63,7 @@ defineProps<{
                 />
                 <label :for="'phone-' + guest.id">Telefónne č.</label>
             </FloatLabel>
-            <div class="col-span-2 flex flex-wrap justify-center gap-5">
+            <div class="sm:col-span-2 flex flex-wrap justify-center gap-5">
                 <div class="flex items-center">
                     <RadioButton v-model="guest.is_participated" inputId="participation-yes" name="participation-yes"
                                  :value="true"/>
@@ -75,7 +75,7 @@ defineProps<{
                     <label for="participation-no" class="ml-2">Nezúčastním sa</label>
                 </div>
             </div>
-            <div class="col-span-2 grid gap-y-6" v-if="guest.is_participated">
+            <div class="sm:col-span-2 grid gap-y-6" v-if="guest.is_participated">
                 <div>
                     <h5>Strava/Diéta <small class="opacity-60">(Bez špeciálnej stravy nevypĺňajte)</small></h5>
                     <div class="card flex flex-wrap justify-center gap-x-6 gap-y-3 mt-3">
