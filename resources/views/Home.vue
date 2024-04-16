@@ -3,7 +3,6 @@
 import {Head} from "@inertiajs/vue3";
 import SecondaryHeader from "@/Components/Heading/SecondaryHeader.vue";
 import VueCountdown from "@chenfengyuan/vue-countdown";
-import PrimaryHeading from "@/Components/Heading/Headings/PrimaryHeading.vue";
 import {onMounted, ref} from "vue";
 
 const weddingDate = new Date("July 6, 2024 15:00:00").getTime();
