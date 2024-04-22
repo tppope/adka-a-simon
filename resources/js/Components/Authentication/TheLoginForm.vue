@@ -26,7 +26,7 @@ function submit() {
 </script>
 
 <template>
-    <form @submit.prevent="submit">
+    <form @submit.prevent="submit" class="md:w-96 w-full">
         <div v-auto-animate>
             <FloatLabel>
                 <InputText

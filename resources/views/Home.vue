@@ -25,7 +25,7 @@ onMounted(() => {
             src="https://lottie.host/da523398-87f2-4128-9c78-1a953e0eae5f/OzqU0mCxZt.json"
         ></lottie-player>
         <VueCountdown :time="weddingDate - (new Date()).getTime()" v-slot="{ days, hours, minutes, seconds }">
-            <div class="text-center font-heading text-4xl md:text-5xl p-5 font-bold text-primary-500 sm:text-6xl lg:text-6xl">{{ days.toString().padStart(2, '0') }}d {{ hours.toString().padStart(2, '0') }}h {{ minutes }}m {{ seconds }}s</div>
+            <div class="text-center font-heading text-4xl p-5 font-bold text-primary-500 sm:text-5xl">{{ days.toString().padStart(2, '0') }}d {{ hours.toString().padStart(2, '0') }}h {{ minutes.toString().padStart(2, '0') }}m {{ seconds.toString().padStart(2, '0') }}s</div>
         </VueCountdown>
     </section>
 </template>

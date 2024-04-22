@@ -2,7 +2,7 @@
     import BinaryListCell from "@/Components/Shared/BinaryListCell.vue";
 
     defineProps<{
-        list: any[],
+        list: {[key: string]: string},
         stripped: boolean
     }>()
 </script>
