@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
-import DataTable from 'primevue/datatable';
-import DataView from "primevue/dataview";
+import DataTable, {DataTableRowContextMenuEvent} from 'primevue/datatable';
+import ContextMenu from "primevue/contextmenu";
 import Column from 'primevue/column';
 import {Guest} from "@/types/model";
 import SecondaryHeader from "@/Components/Heading/SecondaryHeader.vue";
-import {Head} from "@inertiajs/vue3";
-import {ref} from "vue";
+import {Head, router} from "@inertiajs/vue3";
+import {Ref, ref} from "vue";
 import {FilterMatchMode} from "primevue/api";
 import InputText from "primevue/inputtext";
 import BinaryList from "@/Components/Shared/BinaryList.vue";
@@ -14,7 +14,7 @@ import Divider from "primevue/divider";
 
 
 defineProps<{
-    guestInfo: {label:string, value: string}[]
+    guestInfo: {[key: string]: string}
     guests: Guest[];
 }>()
 
@@ -23,15 +23,37 @@ const filters = ref({
     surname: { value: null, matchMode: FilterMatchMode.STARTS_WITH }
 });
 
+const contextMenu = ref();
+const selectedGuest = ref<Guest | null>();
+const menuModel = ref([
+    {label: 'Vymazať', icon: 'pi pi-fw pi-times', command: () => deleteProduct(selectedGuest)}
+]);
+
+function deleteProduct(guest?: Ref<Guest | null | undefined>) {
+    router.delete(route('guest.destroy', {guest: guest?.value?.id}), {
+        preserveScroll: true,
+        onBefore: () => confirm(`Naozaj chceš vymazať hosťa ${guest?.value?.name} ${guest?.value?.name}?`),
+    })
+    selectedGuest.value = null;
+}
+
+function onRowContextMenu(event: DataTableRowContextMenuEvent) {
+    contextMenu.value.show(event.originalEvent)
+}
+
 </script>
 
 <template>
     <Head title="Hostia" />
-    <section>
+    <section class="w-full">
         <SecondaryHeader title="Hostia" />
-        <BinaryList stripped :list="guestInfo" class="mb-10"/>
+        <BinaryList stripped :list="guestInfo" class="mb-10 max-w-lg mx-auto" />
         <article class="w-full">
+            <ContextMenu ref="contextMenu" :model="menuModel" @hide="selectedGuest = null" />
             <DataTable
+                contextMenu
+                v-model:contextMenuSelection="selectedGuest"
+                @rowContextmenu="onRowContextMenu"
                 :value="guests"
                 removableSort
                 sort-mode="multiple"

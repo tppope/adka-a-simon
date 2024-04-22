@@ -14,11 +14,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::name('guest.')->prefix('potvrdenie-ucasti')->controller(GuestController::class)->group(function () {
-
    Route::get('/', 'create')->name('create');
    Route::post('/', 'store')->name('store');
+   Route::delete('/{guest}', 'destroy')->name('destroy');
 });
 
-Route::get('/admin', [GuestController::class, 'show'])->middleware(['auth', 'verified'])->name('admin');
+Route::get('/admin', [GuestController::class, 'index'])->middleware(['auth', 'verified'])->name('admin');
 
 require __DIR__.'/auth.php';
