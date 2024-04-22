@@ -13,8 +13,8 @@
         <!-- Scripts -->
         @routes
         @vite([
-            resource_path('js/app.ts'),
-            resource_path("views/{$page['component']}.vue")
+            'resources/js/app.ts',
+            "resources/views/{$page['component']}.vue"
         ])
         @inertiaHead
     </head>
