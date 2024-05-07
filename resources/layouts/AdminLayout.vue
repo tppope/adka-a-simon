@@ -8,7 +8,7 @@ import PrimaryHeader from "@/Components/Heading/PrimaryHeader.vue";
 <template>
 
     <PrimaryHeader :title="$page.props.app_name" class="sm:max-w-[85rem] mx-auto">
-        <h2 class="text-center font-heading text-3xl font-bold sm:text-4xl lg:text-5xl">Admin Panel</h2>
+        <h2 class="text-center text-green-500 text-3xl font-bold sm:text-4xl lg:text-5xl">Admin Panel</h2>
         <Link
             v-if="$page.props.auth.user"
             :href="route('logout')"

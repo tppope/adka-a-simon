@@ -2,8 +2,8 @@
 
 import PrimaryHeader from "@/Components/Heading/PrimaryHeader.vue";
 import Menubar, {MenubarPassThroughOptions} from "primevue/menubar";
-import {Link} from "@inertiajs/vue3";
-import {ref} from "vue";
+import {Link, router} from "@inertiajs/vue3";
+import {onMounted} from "vue";
 
 const pt:MenubarPassThroughOptions = {
     root: {
@@ -41,6 +41,11 @@ const pt:MenubarPassThroughOptions = {
     }
 }
 
+onMounted(() => {
+    router.on('start', (event) => {
+        window.scrollTo({ top: 0, left: 0});
+    })
+})
 </script>
 
 <template>

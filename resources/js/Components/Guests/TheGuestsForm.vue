@@ -23,6 +23,7 @@ const defaultGuest: Guest = {
     'is_vegan': false,
     'is_child': false,
     'is_participated': true,
+    'is_accommodation_needed': false,
     'notes': ''
 }
 
@@ -62,7 +63,7 @@ const canRemove = computed<boolean>(() => (form.guests.length > 1))
 <template>
     <article class="pb-3">
         <form @submit.prevent="submit"
-              class="flex flex-col md:items-center items-stretch">
+              class="flex flex-col sm:items-center items-stretch">
             <small class="self-end mr-8">* Povinné pole</small>
             <div class="border-2 border-surface-200 rounded-md p-5"
                  v-auto-animate>

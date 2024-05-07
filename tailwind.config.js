@@ -13,7 +13,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['"Playfair Display"', ...defaultTheme.fontFamily.sans],
+                heading: ['"Playfair Display"', ...defaultTheme.fontFamily.sans]
             },
             colors: {
                 'primary-50': 'rgb(var(--primary-50))',

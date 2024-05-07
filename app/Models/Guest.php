@@ -21,7 +21,8 @@ class Guest extends Model
         'is_vegan',
         'is_child',
         'notes',
-        'is_participated'
+        'is_participated',
+        'is_accommodation_needed'
     ];
 
     protected function casts(): array
@@ -32,7 +33,8 @@ class Guest extends Model
             'is_vegetarian' => 'boolean',
             'is_vegan' => 'boolean',
             'is_child' => 'boolean',
-            'is_participated' => 'boolean'
+            'is_participated' => 'boolean',
+            'is_accommodation_needed' => 'boolean'
         ];
     }
 

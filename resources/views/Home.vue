@@ -17,6 +17,9 @@ onMounted(() => {
     <Head title="Informácie" />
     <section v-auto-animate>
         <SecondaryHeader title="Informácie" />
+        <p class="text-center">
+            V deň svadby si tu budete môcť pozrieť zasadací poriadok.
+        </p>
         <lottie-player
             v-if="showLottie"
             autoplay

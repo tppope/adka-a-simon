@@ -19,6 +19,7 @@ class GuestController extends Controller
         return Inertia::render('Admin/Dashboard', [
             'guestInfo' => [
                 'Potvrdili účasť' => $allGuests->where('is_participated', true)->count(),
+                'Potrebujú ubytovanie' => $allGuests->where('is_accommodation_needed', true)->count(),
                 'Bezlaktózových' => $allGuests->where('is_lactose_free', true)->count(),
                 'Bezlepkových' => $allGuests->where('is_gluten_free', true)->count(),
                 'Vegetariánov' => $allGuests->where('is_vegetarian', true)->count(),

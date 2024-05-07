@@ -94,6 +94,12 @@ function onRowContextMenu(event: DataTableRowContextMenuEvent) {
                         <Divider v-else/>
                     </template>
                 </Column>
+                <Column field="is_accommodation_needed" sortable header="Potrebuje ubytovanie" class="text-center">
+                    <template #body="slotProps">
+                        <i v-if="slotProps.data.is_accommodation_needed" class="pi pi-home"></i>
+                        <i v-else class="pi pi-times-circle"></i>
+                    </template>
+                </Column>
                 <Column field="is_lactose_free" sortable header="Bezlakto" class="text-center">
                     <template #body="slotProps">
                         <i v-if="slotProps.data.is_lactose_free" class="pi pi-check-circle"></i>

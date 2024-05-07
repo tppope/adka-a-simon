@@ -22,4 +22,5 @@ export type Guest = {
     updated_at?: any;
     deleted_at?: any;
     is_participated: any;
+    is_accommodation_needed: any;
 };
