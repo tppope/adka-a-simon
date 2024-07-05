@@ -7,9 +7,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home', [
-        'canLogin' => Route::has('login'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'zasadaciPoriadokPath' => asset('storage/zasadaci_poriadok.png'),
     ]);
 })->name('home');
 
