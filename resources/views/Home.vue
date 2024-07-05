@@ -23,7 +23,7 @@ onMounted(() => {
     <Head title="Informácie" />
     <section v-auto-animate>
         <SecondaryHeader title="Zasadací poriadok" />
-        <Image :src="zasadaciPoriadokPath" alt="Image" preview />
+        <Image :src="zasadaciPoriadokPath" alt="Image" />
 <!--        <lottie-player-->
 <!--            v-if="showLottie"-->
 <!--            autoplay-->
