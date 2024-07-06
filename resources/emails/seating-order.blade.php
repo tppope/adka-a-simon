@@ -48,7 +48,7 @@
             color: rgb(100 116 139);
         }
 
-        body {
+        body, html {
             background: #fefdfa;
             font-family: "Playfair Display", ui-sans-serif, system-ui;
         }
